@@ -1,3 +1,4 @@
+-- do
 return {
 	{
 		"glepnir/lspsaga.nvim",
@@ -21,7 +22,7 @@ return {
 			-- "jose-elias-alvarez/null-ls.nvim",
 		},
 		config = function()
-			require("bin.plugins.lsp.lsp")
+			require("bin.plugins.lsp.lsp-settings").mason()
 		end,
 	},
 	{
@@ -46,10 +47,42 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
+			-- {
+			-- 	"folke/neodev.nvim",
+			-- 	config = true, --需要加上这个
+			-- },
 		},
+		-- dependencies = {
+		-- 	"williamboman/mason-lspconfig.nvim",
+		-- },
 		config = function()
-			require("bin.plugins.lsp.lsp-format")
+			require("bin.plugins.lsp.lsp-settings").lspconfig()
+		end,
+	},
+	{
+		"folke/neodev.nvim",
+		enabled = false,
+		opts = {
+			library = {
+				enabled = true,
+			},
+			lspconfig = true,
+		},
+		config = function(_, opts)
+			require("neodev").setup(opts)
+			local lspconfig = require("lspconfig")
+			lspconfig.lua_ls.setup({
+				settings = {
+					Lua = {
+						completion = {
+							callSnippet = "Replace",
+						},
+						workspace = {
+							checkThirdParty = true,
+						},
+					},
+				},
+			})
 		end,
 	},
 	{
@@ -60,3 +93,6 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 }
+-- end
+
+-- vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { silent = true, buffer = 5 })

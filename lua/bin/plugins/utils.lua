@@ -11,7 +11,7 @@ return {
 		end,
 		config = function()
 			require("bin.plugins.utils.treesitter")
-			require("nvim-ts-autotag").setup()
+			-- require("nvim-ts-autotag").setup()
 		end,
 	},
 	-- {
@@ -21,6 +21,7 @@ return {
 	-- 	end,
 	-- },
 	{
+		-- "folke/noice.nvim",
 		"folke/noice.nvim",
 		config = function()
 			require("bin.plugins.utils.noice")
