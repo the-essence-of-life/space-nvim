@@ -172,7 +172,7 @@ nvim
 ```
 
 ---
-[get the Makefile]({% raw %}{{ https://github.com }}{% endraw %}/Makefile)
+[get the Makefile](./Makefile)
 
 ## 👋 THANKS SO
 
