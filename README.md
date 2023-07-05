@@ -172,7 +172,7 @@ nvim
 ```
 
 ---
-[get the Makefile](./Makefile)
+[get the Makefile](./Makefile#L2)
 
 ## 👋 THANKS SO
 
