@@ -293,6 +293,13 @@ You can [click it](https://github.com/neovim/nvim-lspconfig/blob/master/doc/serv
 You can also input `:help lspconfig-all` in your neovim.
 
 
+### plugins
+[lsp](./lua/bin/plugins/lsp/)
+[tools](./lua/bin/plugins/tools/)
+[user](./lua/bin/plugins/user/)
+[utils](./lua/bin/plugins/utils/)
+[ui](./lua/bin/plugins/ui/)
+
 ---
 [get the Makefile](./Makefile#L2)
 
